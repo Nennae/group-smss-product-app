@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { fetchProduct } from "./actions";
+import { fetchProduct } from "../data-access/actions";
 import { CardList } from "@/product-cards/cards";
 
 export default async function Home() {
