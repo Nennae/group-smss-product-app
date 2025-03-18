@@ -1,10 +1,10 @@
 import Image from "next/image";
-import { fetchProduct } from "../data-access/actions";
-import { CardList } from "@/product-cards/cards";
+import { fetchProducts } from "../data-access/fetch-products";
+import { CardList } from "@/app/components/product-cards/cards";
 
 export default async function Home() {
 
-  const { products } = await fetchProduct();
+  const { products } = await fetchProducts();
 
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
