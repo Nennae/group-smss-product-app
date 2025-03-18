@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { Product } from "@/data-access/actions";
+import { Product } from "@/data-access/fetch-products";
 
 // Komponent för att visa listan med kort
 export function CardList({ products }: { products: Product[] }) {
