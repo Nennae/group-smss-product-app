@@ -1,6 +1,7 @@
 "use client";
+import { Product } from "@/interfaces/product-interfaces";
+import { Span } from "next/dist/trace";
 import Image from "next/image";
-import { Product } from "@/data-access/fetch-products";
 
 // Komponent för att visa listan med kort
 export function CardList({ products }: { products: Product[] }) {
@@ -19,25 +20,24 @@ export function Card({ product }: { product: Product }) {
   const discountedPrice = (product.price * (1 - product.discountPercentage / 100)).toFixed(2);
 
   return (
-    <li className="">
+    <li className="bg-white w-full max-w-xs mb-11 p-4 mb-1 border-1 rounded-md shadow-md">
 
-      <div className="">
+      <div className="bg-gray-100 w-full max-w-xs mb-11 p-4 mb-1 border-1 rounded-md shadow-md">
         <Image
-          className=""
+          className="w-full h-48 object-cover rounded mb-2"
           src={product.thumbnail} // Ändrat från images till thumbnail
           width={200}
           height={200}
           alt={`Bild ${product.title}`}
         />
       </div>
-
-      <h2>{product.title}</h2>
-
-      <h3>Price:</h3>
-      <p className="">
-        <span className="">${product.price}</span>
-      </p>
-
+     <div className="items-center justify-between mb-2">
+      <h2 className="text-xl font-bold text-black-300">{product.title}</h2>
+       <div className="flex items-center justify-between mb-2">
+      <p className="text-xl font-bold text-red-500 uppercase mb-1">${product.price} </p>
+      <span> {product.discountPercentage}% </span>
+      </div>
+      </div>
     </li>
   );
 }
