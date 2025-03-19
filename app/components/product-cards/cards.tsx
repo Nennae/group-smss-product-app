@@ -2,6 +2,7 @@
 import { Product } from "@/interfaces/product-interfaces";
 import { Span } from "next/dist/trace";
 import Image from "next/image";
+import Link from "next/link";
 
 // Komponent för att visa listan med kort
 export function CardList({ products }: { products: Product[] }) {
@@ -23,6 +24,7 @@ export function Card({ product }: { product: Product }) {
     <li className="bg-white w-full max-w-xs mb-11 p-4 mb-1 border-1 rounded-md shadow-md">
 
       <div className="bg-gray-100 w-full max-w-xs mb-11 p-4 mb-1 border-1 rounded-md shadow-md">
+        <Link href={`/products/${product.id}`} >
         <Image
           className="w-full h-48 object-cover rounded mb-2"
           src={product.thumbnail} // Ändrat från images till thumbnail
@@ -30,6 +32,7 @@ export function Card({ product }: { product: Product }) {
           height={200}
           alt={`Bild ${product.title}`}
         />
+        </Link>
       </div>
      <div className="items-center justify-between mb-2">
       <h2 className="text-xl font-bold text-black-300">{product.title}</h2>
