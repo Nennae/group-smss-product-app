@@ -1,6 +1,5 @@
 "use client";
 import { Product } from "@/interfaces/product-interfaces";
-import { Span } from "next/dist/trace";
 import Image from "next/image";
 import Link from "next/link";
 
