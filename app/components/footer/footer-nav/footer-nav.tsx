@@ -19,7 +19,6 @@ export default function FooterNav() {
             </li>
           </ul>
         </nav>
-        <p>Copyright SMSS AB 2025. All right reserved</p>
       </footer>
     </>
   );
