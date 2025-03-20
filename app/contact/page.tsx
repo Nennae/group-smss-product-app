@@ -4,7 +4,7 @@ import map from "../../public/images/map.jpeg";
 export default function ContactPage() {
 
     return (
-        <main>
+        <main className="grid items-center justify-items-center w-full px-[10vw] py-[4rem] gap-4 md:grid-cols-[1fr_1fr]">
             <section>
                 <h2>Call To Us</h2>
                 <p>If you’re experiencing any difficulties or have questions about our products, please don’t hesitate to reach out. We’re here to help and will do our best to resolve your issue as quickly as possible.</p>
@@ -25,7 +25,7 @@ export default function ContactPage() {
             </section>
             <section>
                 <Image
-                    className="object-contain"
+                    className="object-contain w-full h-auto"
                     src={map}
                     alt=""
                     placeholder="blur"
