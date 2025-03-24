@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { fetchProducts } from "../data-access/fetch-products";
+import { fetchProducts } from "@/data-access/fetch-products"
 import { CardList } from "@/app/components/product-cards/cards";
 
 export default async function Home({ searchParams }: { searchParams: { page?: string } }) {
@@ -12,7 +12,6 @@ export default async function Home({ searchParams }: { searchParams: { page?: st
         <h1 className="text-center text-black-300 mt-10">MIN Products Store</h1>
         <span>Totalt: {total} produkter</span>
         <CardList products={products} totalProducts={total} />
-
 
       </main>
     </div>

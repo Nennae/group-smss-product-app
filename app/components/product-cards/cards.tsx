@@ -76,3 +76,4 @@ export function CardList({ products, totalProducts }: { products: Product[]; tot
     </div>
   );
 }
+
