@@ -14,7 +14,7 @@ export default function AboutPage() {
             w-[100vw] max-w-sm md:max-w-5xl mx-auto py-[4.2rem]
             grid gap-10 
             md:grid-cols-12 md:grid-rows-[auto_1fr]
-            ">
+        ">
             <section>
                 <h2 className="text-[3.375rem] font-semibold">Our Story</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, non error sapiente quasi voluptate, obcaecati omnis ab cum corporis pariatur, deleniti sed maxime amet aperiam hic? Quae porro sapiente fuga. Voluptatem aliquid dolor nulla quasi. Deserunt ducimus modi asperiores omnis culpa neque vitae. Assumenda, eaque. Ea cum sed optio tenetur neque. Laboriosam.</p>
