@@ -1,7 +1,13 @@
-import { clsx, type ClassValue } from "clsx";
+//import { clsx, type ClassValue } from "clsx";
+import { twMerge as _twMerge } from "tailwind-merge"; // importera tailwind-merge 
 
-export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs));
+// Här är en eventuell wrapper runt twMerge, se till att den inte kastar något fel
+export const twMerge = (classNames: string) => {
+  return _twMerge(classNames); // om den inte är implementerad, kan du få ett fel
+}
+
+export const cn = (...args: string[]) => {
+  return twMerge(args.filter(Boolean).join(" "));
 }
 
 /**
@@ -16,7 +22,3 @@ export const parseQueryParam = (
     ? parseInt(param, 24) || defaultValue
     : defaultValue;
 };
-
-function twMerge(arg0: string) {
-    throw new Error("Function not implemented.");
-}

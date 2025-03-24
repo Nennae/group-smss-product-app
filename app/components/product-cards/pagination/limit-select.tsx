@@ -34,7 +34,7 @@ export default function LimitSelect() {
           <SelectLabel>Items/Page</SelectLabel>
           <SelectItem value="12">12</SelectItem>
           <SelectItem value="24">24</SelectItem>
-          <SelectItem value="30">30</SelectItem>
+          <SelectItem value="32">32</SelectItem>
         </SelectGroup>
       </SelectContent>
     </Select>
