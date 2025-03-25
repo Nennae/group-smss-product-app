@@ -4,32 +4,38 @@ import freestocks_3Q3tsJ01nc_unsplash from "@/public/images/freestocks_3Q3tsJ01n
 
 export const metadata: Metadata = {
     title: "About SMSS",
-    description: "lorem...",
 };
 
 export default function AboutPage() {
+
     return (
         <main
             className="
-            w-[100vw] max-w-sm md:max-w-5xl mx-auto py-[4.2rem]
-            grid gap-10 
-            md:grid-cols-12 md:grid-rows-[auto_1fr]
+            w-[100vw] py-[4.2rem]
+            max-w-[34.56rem] md:max-w-[1700px] mx-auto
+            grid gap-y-10 justify-items-center
+            md:grid-cols-[min(5vw,30px)_1fr_1fr_min(5vw,30px)]  
         ">
-            <section>
-                <h2 className="text-[3.375rem] font-semibold">Our Story</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, non error sapiente quasi voluptate, obcaecati omnis ab cum corporis pariatur, deleniti sed maxime amet aperiam hic? Quae porro sapiente fuga. Voluptatem aliquid dolor nulla quasi. Deserunt ducimus modi asperiores omnis culpa neque vitae. Assumenda, eaque. Ea cum sed optio tenetur neque. Laboriosam.</p>
+            <section
+                className="
+                w-full px-8
+                md:col-[2/3] md:row-span-full
+                grid gap-8 max-w-[55ch] content-center
+                ">
+                <h2 className="text-[3.375rem] font-semibold leading-[1.2]">Our Story</h2>
+                <p>Recusandae, non error sapiente quasi voluptate. Quae porro sapiente fuga. Voluptatem aliquid dolor nulla quasi. Deserunt ducimus modi asperiores omnis culpa neque vitae. Assumenda, eaque. Ea cum sed optio tenetur neque. Laboriosam.</p>
                 <p>Praesentium illum commodi debitis iusto ad repudiandae est, ex sint laboriosam veniam ea, ratione vero inventore at itaque autem tempora impedit soluta!</p>
             </section>
 
             <div
                 className="
-                w-full h-full md:max-w-lg md:justify-self-end
-                md:col-[6/-1] md:row-span-full 
+                w-full max-w-[31rem] mx-auto
+                h-[368px] md:h-[609px]
+                md:col-[3/-1] md:row-span-full md:max-w-full
                 ">
                 <Image
                     className="
-                        row-span-full col-span-full
-                        object-cover aspect-square w-full h-auto"
+                        object-cover object-center w-auto h-full"
                     src={freestocks_3Q3tsJ01nc_unsplash}
                     alt="Woman holding shopping bags"
                     placeholder="blur"
