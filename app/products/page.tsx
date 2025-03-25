@@ -6,6 +6,7 @@ import { parseQueryParam } from "../components/product-cards/lib/utils";
 import { Metadata } from "next";
 import Link from "next/link";
 import { Products } from "@/interfaces/product-interfaces";
+import { fetchProducts } from "@/data-access/fetch-products";
 
 export const metadata: Metadata = {
   title: "Product Listing",
@@ -19,15 +20,16 @@ interface SearchParams {
 export default async function ProductsPage({
   searchParams,
 }: {
-  searchParams: SearchParams; // Fixing incorrect promise type
+  searchParams?: { skip?: string; limit?: string }; // Fixing incorrect promise type
 }) {
   // Destructure searchParams and parse them safely
-  const skipParam = searchParams.skip;
-  const limitParam = searchParams.limit;
+  const parsedSkip = Number(searchParams?.skip ?? "0");
+  const parsedLimit = Number(searchParams?.limit ?? "10");
 
-  const parsedSkip = parseQueryParam(skipParam, 0);
+  /*const parsedSkip = parseQueryParam(skipParam, 0);
   const parsedLimit = parseQueryParam(limitParam, 10);
-
+*/
+const { products, total } = await fetchProducts(parsedSkip, parsedLimit);
   try {
     // Fetch data from API
     const data = await fetchFromAPI<Products>(
@@ -42,6 +44,8 @@ export default async function ProductsPage({
 
     return (
       <>
+       <h1>Products Page</h1>
+       <p>Showing {parsedLimit} products, skipping {parsedSkip}</p>
         <ul className="grid grid-cols-[repeat(auto-fit,minmax(22rem,1fr))] gap-4 mx-4 my-8">
           {
             // Ensure `data.results` exists before calling `.map()`
@@ -67,7 +71,7 @@ export default async function ProductsPage({
 
         <PaginationNav
           path="products"
-          pagesCount={data.count}
+          pagesCount={total}
           limit={parsedLimit}
           skip={parsedSkip}
         />

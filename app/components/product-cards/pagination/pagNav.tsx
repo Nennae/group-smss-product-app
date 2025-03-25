@@ -65,13 +65,13 @@ import {
         className="flex items-center justify-center gap-4 mb-4"
       >
         {makeLink(
-          `${path}/products?skip=${0}&limit=${limit}`,
+          `${path}?skip=${0}&limit=${limit}`,
           "First",
           ChevronFirst,
           skip > 0
         )}
         {makeLink(
-          `${path}/products?skip=${skip - 1}&limit=${limit}`,
+          `${path}?skip=${skip - 1}&limit=${limit}`,
           "Previous",
           ChevronLeft,
           skip > 0
@@ -81,13 +81,13 @@ import {
         <LimitSelect />
   
         {makeLink(
-          `${path}/products?skip=${skip + 1}&limit=${limit}`,
+          `${path}?skip=${skip + 1}&limit=${limit}`,
           "Next",
           ChevronRight,
           skip < totalPages
         )}
         {makeLink(
-          `${path}/products?skip=${totalPages}&limit=${limit}`,
+          `${path}?skip=${totalPages}&limit=${limit}`,
           "Last",
           ChevronLast,
           skip < totalPages
