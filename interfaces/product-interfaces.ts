@@ -14,6 +14,7 @@ export interface Product {
     stock: number;
     tags: string[];
     brand: string;
+
 }
 
 export interface Products {
@@ -21,4 +22,14 @@ export interface Products {
     total: number;
     skip: number;
     limit: number;
+    count: number;
+    next: string | null;
+    previous: string | null;
+    results: NamedAPIResource[];
 }
+  
+  interface NamedAPIResource {
+    id: number;
+    name: string;
+    url: string;
+  }
