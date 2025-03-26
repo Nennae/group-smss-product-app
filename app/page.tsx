@@ -2,8 +2,9 @@ import { fetchProducts } from "@/data-access/fetch-products"
 import { CardList } from "@/app/components/product-cards/cards";
 import CategoryBar from "@/app/components/category-bar/category-bar";
 
-export default async function Home({ searchParams }: { searchParams: { page?: string } }) {
-  const currentPage = Number(searchParams.page) || 1;
+export default async function Home({ searchParams }: { searchParams: Promise<{ page: string }> }) {
+  const page = (await searchParams).page;
+  const currentPage = Number(page) || 1;
   const { products, total } = await fetchProducts(currentPage, 24); //nu testa med No. 8 sen fixa att Visa max 24 produkter per sida
 
   return (
