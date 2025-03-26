@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { fetchProducts } from "@/data-access/fetch-products"
 import { CardList } from "@/app/components/product-cards/cards";
 import CategoryBar from "@/app/components/category-bar/category-bar";
