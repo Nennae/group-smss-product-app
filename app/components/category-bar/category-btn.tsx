@@ -1,14 +1,19 @@
+'use client';
+
 import { ReactElement } from "react";
 
 export default function CategoryBtn({
   icon,
   categoryName,
+  onSelect
 }: {
   icon: ReactElement;
-  categoryName: string;
+    categoryName: string;
+  onSelect?: (category: string) => void;
 }) {
   return (
     <button
+      onClick={() => onSelect?.(categoryName)}
       className="
         flex flex-col items-center justify-center
         gap-2 p-3 sm:p-4 md:p-5 lg:p-6 xl:p-8
