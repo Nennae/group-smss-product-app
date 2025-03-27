@@ -18,6 +18,8 @@ export interface Product {
 }
 
 export interface Products {
+    price: number;
+    tags: string[];
     products: Product[];
     total: number;
     skip: number;
