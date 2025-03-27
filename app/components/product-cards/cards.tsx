@@ -25,8 +25,8 @@ export function Card({ product }: { product: Product }) {
       <div className="items-center justify-between mb-2">
         <h2 className="text-xl font-bold text-black-300">{product.title}</h2>
         <div className="flex items-center justify-between mt-6">
-          <p className="text-xl font-bold text-red-500 uppercase">${product.price}</p>
-          <span className="text-sm font-semibold text-green-600">{product.discountPercentage}%</span>
+          <p className="text-xl font-bold text-red-700 uppercase">${product.price}</p>
+          <span className="text-m font-semibold text-green-900">{product.discountPercentage}%</span>
         </div>
       </div>
     </li>
