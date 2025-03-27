@@ -54,7 +54,7 @@ export function CardList({ products, totalProducts }: { products: Product[]; tot
       </ul>
 
       {/* Paginering */}
-      <div className="flex justify-center mt-6 space-x-4">
+      <div className="flex justify-evenly mt-6">
         <button
           className={`px-4 py-2 border rounded ${currentPage === 1 ? "opacity-50 cursor-not-allowed" : ""}`}
           onClick={() => handlePageChange(currentPage - 1)}
