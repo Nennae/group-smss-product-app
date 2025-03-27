@@ -32,12 +32,12 @@ export default function Header() {
     return (
         <div className="border-t-35 border-black ">
 
-            <header className="bg-white shadow-md px-4 py-3 flex items-center justify-between space-x-4">
+            <header className="bg-white shadow-md px-4 py-3 flex items-center">
 
                 {/* Menu Icon */}
-                <nav>
+            
                     {/* Top Bar */}
-                    <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-3 flex-1">
 
                         {/* Hamburger Icon */}
                         <div onClick={() => setIsOpen(true)} className="md:hidden cursor-pointer">
@@ -49,18 +49,16 @@ export default function Header() {
                             <h1 className="font-bold text-xl text-red-600">SMSS E-commerce</h1>
                         </div>
 
-                        {/* Desktop Menu */}
-                        <div className="hidden md:flex items-center space-x-8 ">
-                            <ul className="flex space-x-6">
-                                <li><Link href="/" className="hover:text-yellow-400">Home</Link></li>
-                                <li><Link href="/about" className="hover:text-yellow-400">About</Link></li>
-                                <li><Link href="/contact" className="hover:text-yellow-400">Contact</Link></li>
-                            </ul>
-
-                        </div>
+                    </div>
+                    {/* Desktop Menu */}
+                    <div className="hidden md:flex flex-1 justify-center">
+                        <ul className="flex space-x-6">
+                            <li><Link href="/" className="hover:text-yellow-400">Home</Link></li>
+                            <li><Link href="/about" className="hover:text-yellow-400">About</Link></li>
+                            <li><Link href="/contact" className="hover:text-yellow-400">Contact</Link></li>
+                        </ul>
 
                     </div>
-
                     {/* Overlay */}
                     {isOpen && (
                         <div
@@ -88,12 +86,8 @@ export default function Header() {
                             <li><Link href="/contact" onClick={() => setIsOpen(false)}>Contact</Link></li>
                         </ul>
                     </div>
-
-                </nav>
-
-
                 {/* Right Side Icons */}
-                <div className="flex items-center  space-x-4 relative">
+                <div className="flex items-center space-x-4 flex-1 justify-end">
                     <div className="hidden md:flex items-center border rounded-lg overflow-hidden">
 
                         <input className="border-2 border-black"
@@ -116,7 +110,7 @@ export default function Header() {
                             <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
                                 <div className="bg-white p-6 rounded-xl w-11/12 max-w-lg shadow-lg relative">
                                     <FaTimes
-                                        className="absolute -top-3 -right-3 bg-white rounded-full p-1 shadow-md text-xl cursor-pointer"
+                                        className="absolute top-2 right-2 bg-white rounded-full p-1 shadow-md text-xl cursor-pointer"
                                         onClick={() => setIsOpen(false)}
                                     />
 
@@ -131,8 +125,8 @@ export default function Header() {
                                         />
                                         <button
                                             className="bg-black text-white p-3"
-                                            onClick={handleSearch}>                                            
-                                        <FaSearch />
+                                            onClick={handleSearch}>
+                                            <FaSearch />
                                         </button>
                                     </div>
                                 </div>
