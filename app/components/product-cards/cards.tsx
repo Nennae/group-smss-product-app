@@ -5,9 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
-// Enskilt produktkort
 export function Card({ product }: { product: Product }) {
-  const discountedPrice = (product.price * (1 - product.discountPercentage / 100)).toFixed(2);
 
   return (
     <li className="bg-white w-full max-w-xs mb-11 p-4 border rounded-md shadow-md">
@@ -37,7 +35,7 @@ export function Card({ product }: { product: Product }) {
 export function CardList({ products, totalProducts }: { products: Product[]; totalProducts: number }) {
   const router = useRouter();
   const [currentPage, setCurrentPage] = useState(1);
-  const productsPerPage = 24; // fixa till 24 ..men nu testa 8 för att vissa funkar bra eller inte
+  const productsPerPage = 24;
   const totalPages = Math.ceil(totalProducts / productsPerPage);
 
   const handlePageChange = (newPage: number) => {
