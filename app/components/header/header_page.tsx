@@ -13,6 +13,7 @@ import SearchResults from "./search-results";
 export default function Header() {
     const router = useRouter(); // för att ändra url
     const [isOpen, setIsOpen] = useState(false);
+    const [isSearchOpen, setIsSearchOpen] = useState(false);
     const [searchQuery, setSearchQuery] = useState<string>('');
     // funktion som trigas när användaren trycker på en tangent
     const handleSearch = () => {
@@ -21,7 +22,7 @@ export default function Header() {
             return;
         }
         router.push(`/search?query=${searchQuery}`);
-        setIsOpen(false);
+        setIsSearchOpen(false);
     };
     const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
         if (event.key === "Enter") {
@@ -104,14 +105,14 @@ export default function Header() {
                     </div>
                     <div>
                         <FaSearch className="text-2xl cursor-pointer md:hidden"
-                            onClick={() => setIsOpen(true)} />
+                            onClick={() => setIsSearchOpen(true)} />
                         {/* Search Popup */}
-                        {isOpen && (
+                        {isSearchOpen && (
                             <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
                                 <div className="bg-white p-6 rounded-xl w-11/12 max-w-lg shadow-lg relative">
                                     <FaTimes
                                         className="absolute top-2 right-2 bg-white rounded-full p-1 shadow-md text-xl cursor-pointer"
-                                        onClick={() => setIsOpen(false)}
+                                        onClick={() => setIsSearchOpen(false)}
                                     />
 
                                     <div className="flex items-center border rounded-lg overflow-hidden">
