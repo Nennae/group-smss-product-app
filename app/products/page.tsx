@@ -64,7 +64,7 @@ const { products, total } = await fetchProducts(parsedSkip, parsedLimit);
                 </li>
               ))
             ) : (
-              <p className="text-center col-span-full">No products found.</p>
+              <p className="text-center bold text-green-700 col-span-full">No products found.</p>
             )
           }
         </ul>
