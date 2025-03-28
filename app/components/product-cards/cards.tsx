@@ -13,6 +13,7 @@ export function CardList({ products, totalProducts }: { products: Product[]; tot
           <Card key={product.id} product={product} />
         ))}
       </ul>
+      <Pagination totalProducts={totalProducts} />
     </div>
   );
 }
