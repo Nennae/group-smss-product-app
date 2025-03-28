@@ -25,8 +25,8 @@ export function Card({ product }: { product: Product }) {
       <div className="items-center justify-between mb-2">
         <h2 className="text-xl font-bold text-black-300">{product.title}</h2>
         <div className="flex items-center justify-between mt-6">
-          <p className="text-xl font-bold text-red-500 uppercase">${product.price}</p>
-          <span className="text-sm font-semibold text-green-600">{product.discountPercentage}%</span>
+          <p className="text-xl font-bold text-red-700 uppercase">${product.price}</p>
+          <span className="text-m font-semibold text-green-900">{product.discountPercentage}%</span>
         </div>
       </div>
     </li>
@@ -63,7 +63,7 @@ export function CardList({ products, totalProducts }: { products: Product[]; tot
               <Image src="/icons/chevron-left.png" alt="Previous Page" width={24} height={24} />
 
         </button>
-        <span className="px-4 py-2 border rounded bg-gray-200">Sida {currentPage} av {totalPages}</span>
+        <span className="px-4 py-2 border rounded bg-gray-300">Sida {currentPage} av {totalPages}</span>
         <button
           className={`px-4 py-2 border rounded ${currentPage === totalPages ? "opacity-50 cursor-not-allowed" : ""}`}
           onClick={() => handlePageChange(currentPage + 1)}
