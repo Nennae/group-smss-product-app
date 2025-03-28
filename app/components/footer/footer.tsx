@@ -1,5 +1,5 @@
 "use client";
-import Link from "next/link";
+
 import Image from "next/image";
 import FooterNav from "./footer-nav/footer-nav";
 import FooterSocialLinks from "./footer-social-links/footer-social-links";

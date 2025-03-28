@@ -8,8 +8,10 @@ import {
   FaCarSide,
 } from "react-icons/fa";
 import CategoryBtn from "./category-btn";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import CategoryHeading from "@/app/components/category-bar/category-heading";
+import { Categories } from "@/interfaces/categories-interface"
+import { fetchCategories } from "@/data-access/fetch-categories";
 
 export default function CategoryBar() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
