@@ -1,3 +1,5 @@
+'use server';
+
 import { API_ENDPOINT } from "./endpoints";
 
 export const fetchCategories = async () => {
